@@ -5,7 +5,7 @@ import java.util.stream.*;
 
 public class Main {
 
-    // Завдання 1: Повернути імена під непарним індексом
+
     public static String getOddIndexedNames(List<String> names) {
         return IntStream.range(0, names.size())
                 .filter(index -> index % 2 != 0)
@@ -13,7 +13,7 @@ public class Main {
                 .collect(Collectors.joining(", "));
     }
 
-    // Завдання 2: Перевести рядки у верхній регістр та відсортувати за спаданням
+
     public static List<String> sortStringsInUpperCase(List<String> strings) {
         return strings.stream()
                 .map(String::toUpperCase)
@@ -21,7 +21,7 @@ public class Main {
                 .collect(Collectors.toList());
     }
 
-    // Завдання 3: Вивести числа з масиву у відсортованому вигляді
+
     public static String getSortedNumbers(String[] array) {
         return Arrays.stream(array)
                 .flatMap(s -> Arrays.stream(s.split(", ")))
@@ -31,12 +31,12 @@ public class Main {
                 .collect(Collectors.joining(", "));
     }
 
-    // Завдання 4: Створити безкінечний стрім випадкових чисел за допомогою лінійного конгруентного генератора
+
     public static Stream<Long> generateRandomStream(long a, long c, long m, long seed) {
         return Stream.iterate(seed, x -> (a * x + c) % m);
     }
 
-    // Завдання 5: "Перемішати" елементи зі стрімів
+    
     public static <T> Stream<T> zip(Stream<T> first, Stream<T> second) {
         Iterator<T> firstIterator = first.iterator();
         Iterator<T> secondIterator = second.iterator();
